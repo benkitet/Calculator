@@ -9,6 +9,7 @@ public class View extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	private JLabel lbInput;
+	private JTextField tfInput;
 	private JLabel lbResult;
 	private JButton btnDivide;
 	private JButton btnMultiply;
@@ -72,6 +73,12 @@ public class View extends JFrame {
 	public void setBtnClear(JButton btnClear) {
 		this.btnClear = btnClear;
 	}
+	public JTextField getTfInput() {
+		return tfInput;
+	}
+	public void setTfInput(JTextField tfInput) {
+		this.tfInput = tfInput;
+	}
 //Konstruktor
 	public View() {
 		super.setTitle("Calculator");
@@ -83,6 +90,7 @@ public class View extends JFrame {
 		
 		this.setLbInput(new JLabel("Eingabe"));
 		this.setLbResult(new JLabel("Ergebnis"));
+		this.setTfInput(new JTextField());
 		this.setBtnDivide(new JButton("/"));
 		this.setBtnMultiply(new JButton("x"));
 		this.setBtnSubtract(new JButton("-"));
@@ -91,6 +99,7 @@ public class View extends JFrame {
 		
 		super.add(this.getLbInput());
 		super.add(this.getLbResult());
+		super.add(this.getTfInput());
 		super.add(this.getBtnDivide());
 		super.add(this.getBtnMultiply());
 		super.add(this.getBtnSubtract());
