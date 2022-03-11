@@ -90,23 +90,27 @@ public class View extends JFrame {
 	public View() {
 		super.setTitle("Calculator");
 		super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		super.setSize(new Dimension(270,200));
+		super.setSize(new Dimension(250,200));
 		super.setLocationRelativeTo(null);
 		
 		super.setLayout(new FlowLayout());
 //Label und Textfelder
-		this.setLbInput(new JLabel("Eingabe"));
+		this.setLbInput(new JLabel("Input"));
 		this.setTfInput(new JTextField());
 		this.getTfInput().setPreferredSize(new Dimension(160, 25));
-		this.setLbResult(new JLabel("Ergebnis"));
-		this.setLbOutput(new JLabel(":)"));
+		this.getTfInput().setHorizontalAlignment(JLabel.RIGHT);
+		this.setLbResult(new JLabel("Result"));
+		this.setLbOutput(new JLabel("0,0"));
 		this.getLbOutput().setPreferredSize(new Dimension(160, 25));
+		this.getLbOutput().setHorizontalAlignment(JLabel.RIGHT);
 //Buttons
 		this.setBtnDivide(new JButton("/"));
 		this.setBtnMultiply(new JButton("x"));
 		this.setBtnSubtract(new JButton("-"));
 		this.setBtnAdd(new JButton("+"));
 		this.setBtnResult(new JButton("="));
+		this.setBtnBack(new JButton("back"));
+		this.setBtnClear(new JButton("clear"));
 //Elemente hinzufügen		
 		super.add(this.getLbInput());
 		super.add(this.getTfInput());
@@ -117,8 +121,9 @@ public class View extends JFrame {
 		super.add(this.getBtnSubtract());
 		super.add(this.getBtnAdd());
 		super.add(this.getBtnResult());
-		
-		
+		super.add(this.getBtnBack());
+		super.add(this.getBtnClear());
+				
 		super.setVisible(true);
 	}
 }
