@@ -100,8 +100,8 @@ public class View extends JFrame {
 		this.getTfInput().setPreferredSize(new Dimension(160, 25));
 		this.getTfInput().setHorizontalAlignment(JLabel.RIGHT);
 		this.setLbResult(new JLabel("Result"));
-		this.setLbOutput(new JLabel("0,0"));
-		this.getLbOutput().setPreferredSize(new Dimension(160, 25));
+		this.setLbOutput(new JLabel("0"));
+		this.getLbOutput().setPreferredSize(new Dimension(160, 25));		//lbOutput wird erst gegettet und dann mit der PreferredSize gesettet, mit Punktnotation
 		this.getLbOutput().setHorizontalAlignment(JLabel.RIGHT);
 //Buttons
 		this.setBtnDivide(new JButton("/"));
