@@ -29,11 +29,17 @@ public class Model {
 	}
 //Konstruktor
 	public Model() {
-		this(0);
+		this(0, 0);
 	}
 	
-	public Model(double result) {
+//	public Model(double result) {
+//		this.setResult(result);
+//		this.setPropertyChangeSupport(new PropertyChangeSupport(this));
+//	}
+	
+	public Model(double result, double numberA) {
 		this.setResult(result);
+		this.setNumberA(numberA);
 		this.setPropertyChangeSupport(new PropertyChangeSupport(this));
 	}
 //Methoden
@@ -44,9 +50,9 @@ public class Model {
 		this.getPropertyChangeSupport().removePropertyChangeListener(pcl);
 	}
 	
+
 	public void addition() {
 		double newValue = getResult() + this.getNumberA();
-//		double newValue = getResult();
 		this.getPropertyChangeSupport().firePropertyChange("addition", this.getNumberA(), newValue);
 		this.setResult(newValue);
 		System.out.println("Ergebnis der Addition ist: \n Result: " + getResult() + "\n newValue: " + newValue + "\n numberA " + getNumberA());

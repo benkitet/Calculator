@@ -16,7 +16,9 @@ public class ButtonListener implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		switch(e.getActionCommand()) {
 			case "addition": {
-				controller.getView().getTfInput().getText();
+//				controller.getView().getTfInput().getText();
+// Eingabe aus TfInput (Klasse View) wird geholt, in einen double umgewandelt (von String) und in NumberA der Klasse Model gespeichert:
+				this.controller.getModel().setNumberA(Double.parseDouble(this.controller.getView().getTfInput().getText()));
 				controller.getModel().addition();
 				break;
 			}
