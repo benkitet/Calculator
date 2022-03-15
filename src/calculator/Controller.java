@@ -42,21 +42,41 @@ public class Controller implements PropertyChangeListener {
 //addition
 		this.getView().getBtnAdd().setActionCommand("addition");
 		this.getView().getBtnAdd().addActionListener(this.getButtonListener());
+//subtraction
+		this.getView().getBtnSubtract().setActionCommand("subtraction");
+		this.getView().getBtnSubtract().addActionListener(this.getButtonListener());
+//multiply
+		this.getView().getBtnMultiply().setActionCommand("multiply");
+		this.getView().getBtnMultiply().addActionListener(this.getButtonListener());
+//divide
+		this.getView().getBtnDivide().setActionCommand("divide");
+		this.getView().getBtnDivide().addActionListener(this.getButtonListener());
+//result	
+		this.getView().getBtnResult().setActionCommand("result");
+		this.getView().getBtnResult().addActionListener(this.getButtonListener());
+//back	
+		this.getView().getBtnBack().setActionCommand("back");
+		this.getView().getBtnBack().addActionListener(this.getButtonListener());
+//clear	
+		this.getView().getBtnClear().setActionCommand("clear");
+		this.getView().getBtnClear().addActionListener(this.getButtonListener());
 		
 	}
 	
 	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
-		if(evt.getPropertyName().equals("addition")
-				) 
+		if (evt.getPropertyName().equals("addition") ||
+			evt.getPropertyName().equals("subtraction") ||
+		   	evt.getPropertyName().equals("multiply") ||
+		   	evt.getPropertyName().equals("divide") ||
+			evt.getPropertyName().equals("result") ||
+			evt.getPropertyName().equals("back") ||
+			evt.getPropertyName().equals("clear") )
 				{
-//				this.getModel().setNumberA(Double.parseDouble(this.getView().getTfInput().getText()));
-				System.out.println("TfInput: " + Double.parseDouble(this.getView().getTfInput().getText()));
-			
 				System.out.println(" --- ");
-		
+				System.out.println("TfInput: " + Double.parseDouble(this.getView().getTfInput().getText()));	//nur zur Übersicht, keine Funktion
 				this.getView().getLbOutput().setText(
-						String.valueOf(evt.getNewValue())	//wird im Label LbOutput angezeigt
+						String.valueOf(evt.getNewValue())	//NewValue wird im Label LbOutput angezeigt
 						);
 				}
 	}

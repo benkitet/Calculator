@@ -10,6 +10,8 @@ public class View extends JFrame {
 	
 	private JLabel lbInput;
 	private JTextField tfInput;
+	private JLabel lbInput2;
+	private JTextField tfInput2;
 	private JLabel lbResult;
 	private JLabel lbOutput;
 	private JButton btnDivide;
@@ -31,6 +33,18 @@ public class View extends JFrame {
 	}
 	public void setTfInput(JTextField tfInput) {
 		this.tfInput = tfInput;
+	}
+	public JLabel getLbInput2() {
+		return lbInput2;
+	}
+	public void setLbInput2(JLabel lbInput2) {
+		this.lbInput2 = lbInput2;
+	}
+	public JTextField getTfInput2() {
+		return tfInput2;
+	}
+	public void setTfInput2(JTextField tfInput2) {
+		this.tfInput2 = tfInput2;
 	}
 	public JLabel getLbResult() {
 		return lbResult;
@@ -95,10 +109,14 @@ public class View extends JFrame {
 		
 		super.setLayout(new FlowLayout());
 //Label und Textfelder
-		this.setLbInput(new JLabel("Input"));
+		this.setLbInput(new JLabel("Input 1"));
+		this.setLbInput2(new JLabel("Input 2"));
 		this.setTfInput(new JTextField());
 		this.getTfInput().setPreferredSize(new Dimension(160, 25));
 		this.getTfInput().setHorizontalAlignment(JLabel.RIGHT);
+		this.setTfInput2(new JTextField());
+		this.getTfInput2().setPreferredSize(new Dimension(160, 25));
+		this.getTfInput2().setHorizontalAlignment(JLabel.RIGHT);
 		this.setLbResult(new JLabel("Result"));
 		this.setLbOutput(new JLabel("0"));
 		this.getLbOutput().setPreferredSize(new Dimension(160, 25));		//lbOutput wird erst gegettet und dann mit der PreferredSize gesettet, mit Punktnotation
@@ -114,6 +132,8 @@ public class View extends JFrame {
 //Elemente hinzufügen		
 		super.add(this.getLbInput());
 		super.add(this.getTfInput());
+		super.add(this.getLbInput2());
+		super.add(this.getTfInput2());
 		super.add(this.getLbResult());
 		super.add(this.getLbOutput());
 		super.add(this.getBtnDivide());

@@ -5,6 +5,7 @@ import java.beans.PropertyChangeSupport;
 
 public class Model {
 	private double numberA;
+	private double numberB;
 	private double result;
 	private PropertyChangeSupport propertyChangeSupport;
 
@@ -15,6 +16,13 @@ public class Model {
 	public void setNumberA(double numberA) {
 		this.numberA = numberA;
 	}
+	public double getNumberB() {
+		return numberB;
+	}
+	public void setNumberB(double numberB) {
+		this.numberB = numberB;
+	}
+	
 	public double getResult() {
 		return result;
 	}	
@@ -50,19 +58,34 @@ public class Model {
 		this.getPropertyChangeSupport().removePropertyChangeListener(pcl);
 	}
 	
+	
 
 	public void addition() {
-		double newValue = getResult() + this.getNumberA();
+		double newValue = this.getNumberA() + this.getNumberB();
 		this.getPropertyChangeSupport().firePropertyChange("addition", this.getNumberA(), newValue);
 		this.setResult(newValue);
-		System.out.println("Ergebnis der Addition ist: \n Result: " + getResult() + "\n newValue: " + newValue + "\n numberA " + getNumberA());
+		System.out.println("Ergebnis der Addition ist: \n Result: " + getResult() + "\n newValue: " + newValue + "\n numberA " + getNumberA() + "\n numberB " + getNumberB());
 	}
 
 	public void subtraction() {
-		// TODO Auto-generated method stub
-		
+		double newValue = this.getNumberA() - this.getNumberB();
+		this.getPropertyChangeSupport().firePropertyChange("subtraction", this.getNumberA(), newValue);
+		this.setResult(newValue);
+		System.out.println("Ergebnis der Subtraktion ist: \n Result: " + getResult() + "\n newValue: " + newValue + "\n numberA " + getNumberA() + "\n numberB " + getNumberB());
 	}
-
-
+	
+	public void multiply() {
+		double newValue = this.getNumberA() * this.getNumberB();
+		this.getPropertyChangeSupport().firePropertyChange("multiply", this.getNumberA(), newValue);
+		this.setResult(newValue);
+		System.out.println("Ergebnis der Multiplikation ist: \n Result: " + getResult() + "\n newValue: " + newValue + "\n numberA " + getNumberA() + "\n numberB " + getNumberB());
+	}
+	
+	public void divide() {
+		double newValue = this.getNumberA() / this.getNumberB();
+		this.getPropertyChangeSupport().firePropertyChange("multiply", this.getNumberA(), newValue);
+		this.setResult(newValue);
+		System.out.println("Ergebnis der Multiplikation ist: \n Result: " + getResult() + "\n newValue: " + newValue + "\n numberA " + getNumberA() + "\n numberB " + getNumberB());
+	}
 
 }
